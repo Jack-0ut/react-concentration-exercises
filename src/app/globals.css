@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background-start-rgb: 115, 147, 179; /* Serene Blue */
+  --background-middle-rgb: 255, 209, 102; /* Warm Yellow */
+  --background-end-rgb: 163, 144, 228; /* Soft Purple */
+  --foreground-rgb: 28, 32, 35; /* For better readability */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-start-rgb: 58, 80, 107; /* Cool Slate */
+    --background-middle-rgb: 255, 214, 165; /* Warm Yellow, but lighter */
+    --background-end-rgb: 136, 189, 188; /* Mellow Teal */
+    --foreground-rgb: 243, 246, 249; /* Pale White for readability */
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb)); 
+  background: linear-gradient(
+    45deg,
+    rgb(var(--background-start-rgb)),
+    rgb(var(--background-middle-rgb)) 50%,
+    rgb(var(--background-end-rgb))
+  );
+}
+
+/* Custom Scrollbar */
+/* Works on Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #4FBDBA #E0E0E0; /* Thumb and track color */
+}
+
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #E0E0E0; /* Color of the tracking area */
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #4FBDBA; /* Color of the scroll thumb */
+  border-radius: 20px; /* Roundness of the scroll thumb */
+  border: 3px solid #E0E0E0; /* Creates padding around the scroll thumb */
+}
